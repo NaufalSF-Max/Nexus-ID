@@ -1,3 +1,4 @@
+@section('title', 'Dashboard')
 <x-app-layout>
     {{-- TAMBAHAN STYLE CSS UNTUK ANIMASI MELAYANG OTOMATIS --}}
     <style>

@@ -1,5 +1,4 @@
-{{-- resources/views/auth/register.blade.php --}}
-
+@section('title', 'Create New ID')
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -55,12 +54,14 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+        <div class="flex items-center justify-end mt-6">
+            {{-- Styling ulang link "Already registered?" jadi tema neon --}}
+            <a class="text-sm text-cyan-500/70 hover:text-cyan-400 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 dark:focus:ring-offset-gray-800 font-['Rajdhani'] transition-colors" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ms-4">
+            {{-- Tombol Register jadi neon --}}
+            <x-primary-button>
                 {{ __('Register') }}
             </x-primary-button>
         </div>
