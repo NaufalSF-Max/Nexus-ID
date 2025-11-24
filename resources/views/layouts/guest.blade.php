@@ -16,7 +16,6 @@
     <body class="font-sans text-gray-100 antialiased bg-gray-950 overflow-x-hidden">
 
         {{-- BACKGROUND CONTAINER --}}
-        {{-- Ini wadah khusus untuk background agar tidak mengganggu layout utama --}}
         <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
             <div class="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse delay-1000"></div>
             <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse"></div>

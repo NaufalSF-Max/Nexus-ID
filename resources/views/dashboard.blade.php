@@ -1,6 +1,6 @@
 @section('title', 'Dashboard')
 <x-app-layout>
-    {{-- TAMBAHAN STYLE CSS UNTUK ANIMASI MELAYANG OTOMATIS --}}
+    {{-- STYLE CSS UNTUK ANIMASI MELAYANG OTOMATIS --}}
     <style>
         @keyframes floating {
             0% { transform: translateY(0px); }
@@ -25,7 +25,6 @@
         <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2 z-0 animate-pulse"></div>
 
         {{-- TILT CONTAINER + ANIMASI FLOATING --}}
-        {{-- PERHATIKAN: Ada tambahan class 'animate-floating' di sini --}}
         <div id="tilt-card" class="relative z-10 w-full max-w-md perspective-[1000px] transition-transform duration-100 ease-out animate-floating">
 
             {{-- KARTU HOLOGRAM --}}
@@ -52,10 +51,8 @@
 
                 {{-- DATA USER --}}
                 <div class="space-y-6 relative z-10">
-                    {{-- PERBAIKAN NAMA PANJANG DI SINI --}}
                     <div>
                         <label class="text-xs text-cyan-300/60 font-['Rajdhani'] uppercase tracking-wider block mb-1">Identity Name</label>
-                        {{-- Hapus 'truncate', tambah 'leading-tight break-words' --}}
                         <h2 class="text-3xl font-['Orbitron'] font-bold text-white tracking-wide uppercase leading-tight break-words">
                             {{ Auth::user()->name }}
                         </h2>
@@ -104,7 +101,7 @@
     </div> {{-- End Main Wrapper --}}
 
 
-    {{-- JAVASCRIPT UNTUK EFEK GERAK INTERAKTIF (Updated) --}}
+    {{-- JAVASCRIPT UNTUK EFEK GERAK INTERAKTIF --}}
     <script>
         // Kita targetkan inner-card nya sekarang untuk transformasi rotasi
         const tiltContainer = document.getElementById('tilt-card');

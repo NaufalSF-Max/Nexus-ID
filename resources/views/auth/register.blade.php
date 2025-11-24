@@ -55,12 +55,10 @@
         </div>
 
         <div class="flex items-center justify-end mt-6">
-            {{-- Styling ulang link "Already registered?" jadi tema neon --}}
             <a class="text-sm text-cyan-500/70 hover:text-cyan-400 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 dark:focus:ring-offset-gray-800 font-['Rajdhani'] transition-colors" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 
-            {{-- Tombol Register jadi neon --}}
             <x-primary-button>
                 {{ __('Register') }}
             </x-primary-button>
