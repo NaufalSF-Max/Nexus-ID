@@ -1,22 +1,39 @@
+{{-- resources/views/auth/register.blade.php --}}
+
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
-        <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
-        <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <!-- Password -->
+        <div class="mt-4">
+            <x-input-label for="npm" :value="__('NPM')" />
+            <x-text-input id="npm" class="block mt-1 w-full" type="text" name="npm" :value="old('npm')" required />
+            <x-input-error :messages="$errors->get('npm')" class="mt-2" />
+        </div>
+
+        <div class="mt-4">
+            <x-input-label for="kelas" :value="__('Kelas')" />
+            <x-text-input id="kelas" class="block mt-1 w-full" type="text" name="kelas" :value="old('kelas')" required />
+            <x-input-error :messages="$errors->get('kelas')" class="mt-2" />
+        </div>
+
+        <div class="mt-4">
+            <x-input-label for="mata_kuliah" :value="__('Mata Kuliah (Opsional)')" />
+            <x-text-input id="mata_kuliah" class="block mt-1 w-full" type="text" name="mata_kuliah" :value="old('mata_kuliah')" />
+            <x-input-error :messages="$errors->get('mata_kuliah')" class="mt-2" />
+        </div>
+
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
 
@@ -28,7 +45,6 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
-        <!-- Confirm Password -->
         <div class="mt-4">
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 

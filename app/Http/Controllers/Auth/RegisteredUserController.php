@@ -32,12 +32,18 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'npm' => ['required', 'string', 'max:20', 'unique:'.User::class], // Wajib, maksimal 20 karakter, harus unik
+            'kelas' => ['required', 'string', 'max:50'], // Wajib
+            'mata_kuliah' => ['nullable', 'string', 'max:255'], // Boleh kosong
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'npm' => $request->npm,
+            'kelas' => $request->kelas,
+            'mata_kuliah' => $request->mata_kuliah,
             'password' => Hash::make($request->password),
         ]);
 
@@ -45,6 +51,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect(RouteServiceProvider::HOME);
     }
 }
